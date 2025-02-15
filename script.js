@@ -1,3 +1,5 @@
+//---------------------------------------------------------------------------------
+// Password visibility toggle
 function showPassword() {
     var passwordBox = document.getElementById('password')
     var showPasswordButton = document.getElementById('showPasswordButton')
@@ -12,3 +14,16 @@ function showPassword() {
         showPasswordButton.classList.add('bxs-lock-alt')
     }
 }
+//---------------------------------------------------------------------------------
+// "Hello [user]!" message
+document.getElementById('loginScreen').addEventListener('submit', function (u) {
+    u.preventDefault();
+
+    var user = document.getElementById('user').value;
+    if (user) {
+        document.getElementById('loginScreen').style.display = 'none';
+        var successfulLoginMessage = document.getElementById('successfulLoginMessage');
+        document.getElementById('helloUser').textContent = user;
+        successfulLoginMessage.style.display = 'block';
+    }
+});
