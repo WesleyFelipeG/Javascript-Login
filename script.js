@@ -27,3 +27,21 @@ document.getElementById('loginScreen').addEventListener('submit', function (u) {
         successfulLoginMessage.style.display = 'block';
     }
 });
+
+//---------------------------------------------------------------------------------
+// Change the background every 5 seconds
+const backgrounds = [
+    './assets/background1.jpg', 
+    './assets/background2.jpg', 
+    './assets/background3.jpg',
+    './assets/background4.jpg',
+    './assets/background5.jpg'
+];
+
+function changeBackground() {
+    const body = document.body;
+    const randomIndex = Math.floor(Math.random() * backgrounds.length);
+    body.style.backgroundImage = `url(${backgrounds[randomIndex]})`;
+}
+
+setInterval(changeBackground,5000);
